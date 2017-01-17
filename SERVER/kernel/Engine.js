@@ -1,5 +1,6 @@
 "use strict";
 var UserController_1 = require("../controller/UserController");
+var UserHistoryController_1 = require("../controller/UserHistoryController");
 var Engine = (function () {
     function Engine(server /* TODO typ*/) {
         var _this = this;
@@ -10,6 +11,7 @@ var Engine = (function () {
         this.setupControllers = function () {
             var eN = _this;
             var _userController = new UserController_1.UserController(eN.server);
+            var _userHistoryController = new UserHistoryController_1.UserHistoryController(eN.server);
         };
         this.setupServer = function () {
             var eN = _this;

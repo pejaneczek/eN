@@ -20,6 +20,7 @@ export class Engine {
     private setupControllers = (): void => {
         var eN = this
         var _userController = new UserController(eN.server)
+        var _userHistoryController = new UserHistoryController(eN.server)
     }
 
     private setupServer = (): void => {

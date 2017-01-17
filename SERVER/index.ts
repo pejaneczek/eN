@@ -23,51 +23,6 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 })
 
-app.post('/user/history/update', function (req, res) {
-    var userHistory = new UserHistory(req.body)
-    var query = { user_id: req.body.user_id }
-
-    UserHistory.findOne(query, function (err, data) {
-        if (err) {
-            res.json({ info: 'error during find User history', error: err })
-        };
-        if (data) {
-            UserHistory.update({
-                user_id: req.body.user_id
-            }, {
-                    $push: {
-                        history: req.body.history
-                    }
-                }, function (err, doc) {
-                    if (!err) {
-                        console.log(doc ? 'updated' : 'inserted')
-                    }
-                });
-        } else {
-            userHistory.save((err) => {
-                if (err) {
-                    res.json({ info: 'error during User history create', error: err })
-                }
-                res.json({ info: 'User history saved successfully', data: userHistory })
-            })
-        }
-    })
-})
-
-app.get('/user/history/find/:user_id', function (req, res) {
-    var query = { user_id: req.params.user_id }
-    UserHistory.find(query, function (err, userHistory) {
-        if (err) {
-            res.json({ info: 'error during find User history', error: err })
-        };
-        if (userHistory) {
-            res.json({ info: 'User history found successfully', data: userHistory })
-        } else {
-            res.json({ info: 'User history not found with id:' + req.params.user_id })
-        }
-    })
-})
-
 let eN = new Engine (app)
 
 

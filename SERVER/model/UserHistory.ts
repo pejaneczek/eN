@@ -1,29 +1,26 @@
 import * as mongoose from "mongoose"
+import { IUserHistory } from "./IUserHistory"
 
-interface History {
-    url: String,
-    title: String,
-    last_visit: String,
+export class UserHistory implements IUserHistory {
+
+    mongoModel: any // TODO
+
+    url: String
+    title: String
+    last_visit: String
     visit_count: Number
+
+    constructor () {
+        var userHistorySchema = mongoose.Schema({
+            user_id: Number,
+            history: [{
+                url: String,
+                title: String,
+                last_visit: String,
+                visit_count: Number
+            }]
+        })
+
+        this.mongoModel = mongoose.model('UserHistory', userHistorySchema)
+    }
 }
-
-interface IUserHistory {
-    user_id: Number,
-    history: History[]
-}
-
-interface IUserHistoryModel extends IUserHistory, mongoose.Document { }
-
-var userHistorySchema = new mongoose.Schema({
-    user_id: Number,
-    history: [{
-        url: String,
-        title: String,
-        last_visit: String,
-        visit_count: Number
-    }]
-});
-
-var UserHistory = mongoose.model<IUserHistoryModel>("UserHistory", userHistorySchema)
-
-export = UserHistory

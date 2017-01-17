@@ -32,6 +32,7 @@ export class UserController {
         app.get('/user/findone/:id', function (req, res) {
             var userInstance = new User()
             var query = { id: req.params.id }
+            
             userInstance.mongoModel.findOne(query, function (err, User) {
                 if (err) {
                     res.json({ info: 'error during find User', error: err })
