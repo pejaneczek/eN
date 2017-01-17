@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "eN",
+    "description": "explore Network",
+    "version": "0.1",
+    "permissions": [
+        "history",
+        "cookies",
+        "<all_urls>"
+    ],
+    "background": {
+        "persistent": false,
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "browser_action": {
+        "default_icon": "logo_eN.png",
+        "default_popup": "popup.html"
+    }
+}
