@@ -1,11 +1,12 @@
-import {UserController} from "../controller/UserController"
-import {UserHistoryController} from "../controller/UserHistoryController"
+import { UserController } from "../controller/UserController"
+import { UserHistoryController } from "../controller/UserHistoryController"
+import { Database } from "./Database"
 
 export class Engine {
 
     public port: number = 3000
 
-    constructor (private server: any /* TODO typ*/) {
+    constructor(private server: any /* TODO typ*/) {
         var eN = this
 
         eN.setupDatabase()
@@ -14,7 +15,7 @@ export class Engine {
     }
 
     private setupDatabase = (): void => {
-
+        var MongoDB = new Database()
     }
 
     private setupControllers = (): void => {
@@ -31,6 +32,6 @@ export class Engine {
                 return
             }
             console.log("eN listening on " + eN.port)
-        }.bind(eN)) 
+        }.bind(eN))
     }
 }

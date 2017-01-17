@@ -1,1 +1,5 @@
-/Config
+kernel/Config
+
+# JS files
+*.js
+*.js.map
