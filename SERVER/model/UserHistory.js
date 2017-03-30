@@ -16,4 +16,3 @@ var UserHistory = (function () {
     return UserHistory;
 }());
 exports.UserHistory = UserHistory;
-//# sourceMappingURL=UserHistory.js.map

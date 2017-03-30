@@ -1,12 +1,13 @@
 import { User } from "../model/User"
+import * as mongoose from "mongoose"
 
 export class UserController {
 
     constructor(private app: any /* TODO */) {
+        var userInstance = new User()
 
         /* Create */
         app.post('/user/create', function (req, res) {
-            var userInstance = new User()
 
             userInstance.mongoModel.save((err) => {
                 if (err) {
@@ -18,8 +19,6 @@ export class UserController {
 
         /* Find all */
         app.get('/user/findall', function (req, res) {
-            var userInstance = new User()
-
             userInstance.mongoModel.find((err, Users) => {
                 if (err) {
                     res.json({ info: 'error during find Users', error: err })
@@ -30,7 +29,6 @@ export class UserController {
 
         /* Find one */
         app.get('/user/findone/:id', function (req, res) {
-            var userInstance = new User()
             var query = { id: req.params.id }
             
             userInstance.mongoModel.findOne(query, function (err, User) {

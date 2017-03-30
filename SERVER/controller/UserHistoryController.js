@@ -2,7 +2,7 @@
 var UserHistory_1 = require("../model/UserHistory");
 var UserHistoryController = (function () {
     function UserHistoryController(app /* TODO */) {
-        this.app = app; /* TODO */
+        this.app = app;
         app.post('/user/history/update', function (req, res) {
             var userHistoryInstance = new UserHistory_1.UserHistory();
             var query = { user_id: req.body.user_id };
@@ -54,4 +54,3 @@ var UserHistoryController = (function () {
     return UserHistoryController;
 }());
 exports.UserHistoryController = UserHistoryController;
-//# sourceMappingURL=UserHistoryController.js.map

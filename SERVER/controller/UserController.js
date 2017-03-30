@@ -2,7 +2,8 @@
 var User_1 = require("../model/User");
 var UserController = (function () {
     function UserController(app /* TODO */) {
-        this.app = app; /* TODO */
+        this.app = app;
+        var userInstance = new User_1.User();
         /* Create */
         app.post('/user/create', function (req, res) {
             var userInstance = new User_1.User();
@@ -15,7 +16,10 @@ var UserController = (function () {
         });
         /* Find all */
         app.get('/user/findall', function (req, res) {
-            var userInstance = new User_1.User();
+            var a = 0;
+            if (a = 0) {
+                return;
+            }
             userInstance.mongoModel.find(function (err, Users) {
                 if (err) {
                     res.json({ info: 'error during find Users', error: err });
@@ -44,4 +48,3 @@ var UserController = (function () {
     return UserController;
 }());
 exports.UserController = UserController;
-//# sourceMappingURL=UserController.js.map

@@ -3,9 +3,9 @@ import { UserHistory } from "../model/UserHistory"
 export class UserHistoryController {
 
     constructor(private app: any /* TODO */) {
+        var userHistoryInstance = new UserHistory()
 
         app.post('/user/history/update', function (req, res) {
-            var userHistoryInstance = new UserHistory()
             var query = { user_id: req.body.user_id }
 
             userHistoryInstance.mongoModel.findOne(query, function (err, data) {
@@ -36,7 +36,6 @@ export class UserHistoryController {
         })
 
         app.get('/user/history/find/:user_id', function (req, res) {
-            var userHistoryInstance = new UserHistory()
             var query = { user_id: req.params.user_id }
 
             userHistoryInstance.mongoModel.find(query, function (err, userHistory) {

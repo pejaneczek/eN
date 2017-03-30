@@ -14,4 +14,3 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 var eN = new Engine_1.Engine(app);
-//# sourceMappingURL=index.js.map

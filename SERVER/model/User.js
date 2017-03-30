@@ -6,11 +6,10 @@ var User = (function () {
             user_id: Number,
             first_name: String,
             last_name: String,
-            email: String,
+            email: String
         });
         this.mongoModel = mongoose.model('User', userSchema);
     }
     return User;
 }());
 exports.User = User;
-//# sourceMappingURL=User.js.map

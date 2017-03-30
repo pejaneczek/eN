@@ -12,4 +12,3 @@ var Database = (function () {
     return Database;
 }());
 exports.Database = Database;
-//# sourceMappingURL=Database.js.map
