@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose = require('mongoose');
 var Config_1 = require("./Config");
 var Database = (function () {
@@ -12,3 +13,4 @@ var Database = (function () {
     return Database;
 }());
 exports.Database = Database;
+//# sourceMappingURL=Database.js.map

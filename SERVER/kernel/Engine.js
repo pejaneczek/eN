@@ -1,11 +1,12 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var UserController_1 = require("../controller/UserController");
 var UserHistoryController_1 = require("../controller/UserHistoryController");
 var Database_1 = require("./Database");
 var Engine = (function () {
     function Engine(server /* TODO typ*/) {
         var _this = this;
-        this.server = server;
+        this.server = server; /* TODO typ*/
         this.port = 3000;
         this.setupDatabase = function () {
             var MongoDB = new Database_1.Database();
@@ -33,3 +34,4 @@ var Engine = (function () {
     return Engine;
 }());
 exports.Engine = Engine;
+//# sourceMappingURL=Engine.js.map

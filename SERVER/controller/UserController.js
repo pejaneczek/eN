@@ -1,12 +1,12 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var User_1 = require("../model/User");
 var UserController = (function () {
     function UserController(app /* TODO */) {
-        this.app = app;
+        this.app = app; /* TODO */
         var userInstance = new User_1.User();
         /* Create */
         app.post('/user/create', function (req, res) {
-            var userInstance = new User_1.User();
             userInstance.mongoModel.save(function (err) {
                 if (err) {
                     res.json({ info: 'error during User create', error: err });
@@ -16,10 +16,6 @@ var UserController = (function () {
         });
         /* Find all */
         app.get('/user/findall', function (req, res) {
-            var a = 0;
-            if (a = 0) {
-                return;
-            }
             userInstance.mongoModel.find(function (err, Users) {
                 if (err) {
                     res.json({ info: 'error during find Users', error: err });
@@ -29,7 +25,6 @@ var UserController = (function () {
         });
         /* Find one */
         app.get('/user/findone/:id', function (req, res) {
-            var userInstance = new User_1.User();
             var query = { id: req.params.id };
             userInstance.mongoModel.findOne(query, function (err, User) {
                 if (err) {
@@ -48,3 +43,4 @@ var UserController = (function () {
     return UserController;
 }());
 exports.UserController = UserController;
+//# sourceMappingURL=UserController.js.map

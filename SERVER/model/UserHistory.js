@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose = require("mongoose");
 var UserHistory = (function () {
     function UserHistory() {
@@ -16,3 +17,4 @@ var UserHistory = (function () {
     return UserHistory;
 }());
 exports.UserHistory = UserHistory;
+//# sourceMappingURL=UserHistory.js.map

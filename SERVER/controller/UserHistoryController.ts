@@ -25,11 +25,13 @@ export class UserHistoryController {
                             }
                         });
                 } else {
-                    userHistoryInstance.mongoModel.save((err) => {
-                        if (err) {
-                            res.json({ info: 'error during User history create', error: err })
+                    userHistoryInstance.mongoModel.insertMany([{
+                        user_id:  req.body.user_id,
+                        history: req.body.history
+                    }], function (err, doc) {
+                        if (!err) {
+                            console.log(doc ? 'inserted' : 'fail')
                         }
-                        res.json({ info: 'User history saved successfully', data: userHistoryInstance })
                     })
                 }
             })

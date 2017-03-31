@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var bodyParser = require("body-parser");
 var Engine_1 = require("./kernel/Engine");
@@ -14,3 +15,4 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 var eN = new Engine_1.Engine(app);
+//# sourceMappingURL=index.js.map
